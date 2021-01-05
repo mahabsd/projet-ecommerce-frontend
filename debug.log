@@ -1,0 +1,16 @@
+[1230/153203.881:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0101/215643.795:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0103/102503.001:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0103/215204.408:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[0103/235957.644:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0103/235957.638:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0103/235957.638:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0103/235957.646:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0103/235957.723:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0103/235957.883:ERROR:exception_snapshot_win.cc(99)] thread ID 2980 not found in process
+[0103/235957.882:ERROR:exception_snapshot_win.cc(99)] thread ID 12532 not found in process
+[0103/235957.645:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0103/235957.883:ERROR:exception_snapshot_win.cc(99)] thread ID 11948 not found in process
+[0103/235957.883:ERROR:exception_snapshot_win.cc(99)] thread ID 5028 not found in process
+[0103/235957.883:ERROR:exception_snapshot_win.cc(99)] thread ID 6252 not found in process
+[0103/235957.883:ERROR:exception_snapshot_win.cc(99)] thread ID 10612 not found in process

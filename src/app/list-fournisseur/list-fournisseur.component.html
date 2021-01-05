@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste de fournisseurs</h4>
+                        <input  matInput placeholder="recherche" [(ngModel)]="recherche">
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>Nom </th>
+                                    <th>Type</th>
+                                    <th>Tel</th>
+                                    <th>E-mail</th>
+                                    <th>Adresse</th>
+                                    <th>Crée par</th>
+                                    <th>Favoris</th>
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let fournisseur of fournisseursToFilter ;let i=index">
+                                      <td>{{fournisseur.name}}</td>
+                                      <td>{{fournisseur.type}}</td>
+                                      <td>{{fournisseur.phone}}</td>
+                                      <td>{{fournisseur.email}}</td>
+                                      <td>{{fournisseur.address}}</td>
+                                      <td>{{fournisseur.userFournisseur }}</td>
+                                      <td>{{fournisseur.favourite}}</td>
+                                      <td><button mat-raised-button class="btn btn-success pull-right" type="button" [routerLink]="['/edit-fournisseur',i]">Edit</button></td>
+                                      <td><button mat-raised-button class="btn btn-danger pull-right" type="button" (click)="supprimer(i)">Supprimer</button></td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
