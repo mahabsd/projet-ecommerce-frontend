@@ -12,7 +12,7 @@
                   </div>
                   <div class="col-md-4">
                     <mat-form-field class="example-full-width">
-                      <input  matInput placeholder="Enter your email" type="email" formControlName="email">
+                      <input matInput placeholder="email" type="text" formControlName="email">
                       <mat-error *ngIf="form1.hasError('required','email')">E-mail is required</mat-error>
                       <mat-error *ngIf="form1.hasError('email','email')">E-mail is not valid</mat-error>
                     </mat-form-field>

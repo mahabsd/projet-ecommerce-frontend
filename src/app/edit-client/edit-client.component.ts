@@ -15,6 +15,7 @@ interface Type {
 })
 export class EditClientComponent implements OnInit {
    
+  
          formClient=new FormGroup({
          name: new FormControl('',[Validators.required]),
          type:new FormControl('',[Validators.required]),
@@ -24,7 +25,7 @@ export class EditClientComponent implements OnInit {
          phone:new FormControl('',[Validators.required]),
          email: new FormControl('',[Validators.required , Validators.email])         }
         );
-         clients = [];
+         clients ;
          x:number;
          types: Type[] = [
           { value: 'fourniture', viewValue: 'Fourniture' },
@@ -34,7 +35,7 @@ export class EditClientComponent implements OnInit {
          constructor(private clientService: ClientsService, private route: ActivatedRoute){}
       
           ngOnInit(){
-            this.clients=this.clientService.getClients();
+            this.clients=this.clientService.getAllclients();
             this.route.paramMap.subscribe(param => {
             let i = +param.get('i');
             this.formClient.controls['name'].setValue(this.clients[i].name);

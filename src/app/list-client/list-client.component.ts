@@ -14,7 +14,7 @@ export class ListClientComponent implements OnInit {
         constructor(private clientService: ClientsService){  }
       
         ngOnInit() {
-          this.clients = this.clientService.getClients();
+          this.clients = this.clientService.getAllclients();
           this.clientsToFilter = [...this.clients];
         }
         supprimer(i){

@@ -19,13 +19,13 @@ export class EditUserComponent implements OnInit {
     confirmPassword: new FormControl(''),
   }
   );
-  users = [];
+  users ;
   x: number;
   constructor(private userService: UsersService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.users = this.userService.getUsers();
+    this.users = this.userService.getAllUsers();
     this.route.paramMap.subscribe(param => {
       let i = +param.get('i'); console.log(i);
       this.form1.controls['username'].setValue(this.users[i].username);

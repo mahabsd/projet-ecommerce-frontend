@@ -38,10 +38,10 @@ export class AddUserComponent implements OnInit {
     { value: 'manager', viewValue: 'Manager' }
   ];
 
-  users = [];
+  users ;
 
   constructor(private userService: UsersService) {
-    this.users = userService.getUsers();
+    this.users = userService.getAllUsers();
   }
 
   ngOnInit() { }

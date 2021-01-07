@@ -32,7 +32,7 @@ export class AddClientComponent implements OnInit {
       clients = [];
             
       constructor(private clientService: ClientsService){
-      this.clients = clientService.getClients(); }
+       }
         
       ngOnInit() {}
       hide = true;

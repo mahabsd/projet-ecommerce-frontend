@@ -12,7 +12,7 @@ export class UserProfileComponent implements OnInit {
     constructor(private userService: UsersService){  }
   
     ngOnInit() {
-      this.users = this.userService.getUsers();
+      this.users = this.userService.getAllUsers();
       this.user=JSON.parse(localStorage.getItem("connected_user"));
     }
   }

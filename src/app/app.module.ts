@@ -14,7 +14,6 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { AddFournisseurComponent } from './add-fournisseur/add-fournisseur.component';
-import { AddAdminComponent } from './sign-up/sign-up.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 import { EditFournisseurComponent } from './edit-fournisseur/edit-fournisseur.component';
 import { EditAdminComponent } from './edit-admin/edit-admin.component';
@@ -47,7 +46,6 @@ import { CommonModule } from '@angular/common';
     EditUserComponent,
     AddClientComponent,
     AddFournisseurComponent,
-    AddAdminComponent,
     EditClientComponent,
     EditFournisseurComponent,
     EditAdminComponent,
