@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { UsersService } from '../services/users.service';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -40,7 +42,7 @@ export class AddUserComponent implements OnInit {
 
   users ;
 
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private route : Router) {
     this.users = userService.getAllUsers();
   }
 
@@ -62,12 +64,22 @@ export class AddUserComponent implements OnInit {
 
 
   /** add user : post send request to add new user */
-  
-  // onSubmit() {
-  //   if (!this.form1.valid) { return; }
-  //   this.userService.addUser(this.form1.value);
-  //   localStorage.setItem("connected_user", JSON.stringify(this.form1.value));
+  response
+  onSubmit() {
+    if (!this.form1.valid) { return; }
+    this.userService.addUser(this.form1.value).subscribe(
+      (val) => {
+          console.log("POST call successful value returned in body", 
+                      val);
+      },
+      response => {
+          console.log("POST call in error", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+      });
 
-  // }
+  }
+
 
 }

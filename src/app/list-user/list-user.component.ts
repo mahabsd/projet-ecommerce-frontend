@@ -18,6 +18,6 @@ export class ListUserComponent implements OnInit {
         this.usersToFilter = [...this.users];
       }
       supprimer(i){
-        this.users.splice(i,1);
+        this.users.userService.deleteUser(i) ;
       }
     }

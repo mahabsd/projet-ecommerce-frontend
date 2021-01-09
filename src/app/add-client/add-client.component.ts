@@ -34,7 +34,12 @@ export class AddClientComponent implements OnInit {
       constructor(private clientService: ClientsService){
        }
         
-      ngOnInit() {}
+      ngOnInit() {
+        this.formClient.patchValue({
+          userClient: JSON.parse(localStorage.getItem("loggeduser")),
+        })
+      }
+
       hide = true;
       typeValue(value) {
         this.formClient.patchValue({

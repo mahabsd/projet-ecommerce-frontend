@@ -17,7 +17,7 @@ export class ListClientComponent implements OnInit {
           this.clients = this.clientService.getAllclients();
           this.clientsToFilter = [...this.clients];
         }
-        supprimer(i){
-          this.clients.splice(i,1); 
-        }
+        supprimer(id){
+          this.clients.clientService.deleteClient(id);
+}
 }

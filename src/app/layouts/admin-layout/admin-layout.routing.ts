@@ -16,7 +16,7 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 
 export const AdminLayoutRoutes: Routes = [ 
-    { path: 'dashboard',      component: DashboardComponent },
+    // { path: 'dashboard',      component: DashboardComponent },
     { path: 'add-user',   component: AddUserComponent },
     { path: 'edit-user',   component: EditUserComponent },
     { path: 'list-user',     component: ListUserComponent },

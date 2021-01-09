@@ -11,33 +11,29 @@ export class UsersService {
   httpHeaders;
   options;
   constructor(private http: HttpClient) {
-    this.user = JSON.parse(localStorage.getItem('loggeduser'));
+    this.user = JSON.parse(localStorage.getItem('loggeduser'));    
     this.httpHeaders = new HttpHeaders({
-      'Authorization': 'Bearer' + this.user.token
+      'Authorization': 'Bearer ' + this.user.token
     });
-    this.options = { headers: this.httpHeaders }
+    this.options = { headers:this.httpHeaders }
   }
-
+ 
   usersUrl: string = environment.basUrl;
-  loginUser(data) {
-    console.log(data);
-    return this.http.post(this.usersUrl + "users/user/login/", data);
-  }
+ 
   addUser(data) {
-    console.log(data);
-    return this.http.post(this.usersUrl + "users/user/add/", data);
+    //console.log(data);
+    return this.http.post(this.usersUrl + "users/user/add/", data, this.options );
   }
-
   getUser(id) {
-    return this.http.get(this.usersUrl + "users/user/" + id);
+    return this.http.get(this.usersUrl + "users/user/" + id, this.options );
   }
   updateUser(id) {
-    return this.http.get(this.usersUrl + "users/user/update" + id);
+    return this.http.get(this.usersUrl + "users/user/update" + id, this.options );
   }
   deleteUser(id) {
-    return this.http.delete(this.usersUrl + "users/user/delete" + id);
+    return this.http.delete(this.usersUrl + "users/user/delete" + id, this.options );
   }
   getAllUsers() {
-    return this.http.get(this.usersUrl + "users/getAllusers");
+    return this.http.get(this.usersUrl + "users/getAllusers", this.options );
   }
 }

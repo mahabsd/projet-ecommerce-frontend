@@ -183,9 +183,10 @@ export class DashboardComponent implements OnInit {
       this.response = res
       console.log(this.response.token);
       console.log(this.response);
+      this.response.user.token = this.response.token
       localStorage.setItem('loggeduser', JSON.stringify(this.response.user));
-      localStorage.setItem('token', this.response.token);
-      this.route.navigateByUrl('/add-user');
+      localStorage.setItem('token', this.response.user.token );
+      this.route.navigateByUrl('/typography');
     })
   }
 
