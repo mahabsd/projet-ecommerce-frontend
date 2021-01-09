@@ -7,7 +7,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { ListUserComponent } from '../../list-user/list-user.component';
 import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
+import { ProductComponent } from '../../add-product/add-product.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -35,7 +35,7 @@ import {MatSelectModule} from '@angular/material/select';
     UserProfileComponent,
     ListUserComponent,
     TypographyComponent,
-    IconsComponent,
+    ProductComponent,
     MapsComponent,
     NotificationsComponent,
   ]

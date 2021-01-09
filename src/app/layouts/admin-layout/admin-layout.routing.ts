@@ -11,7 +11,7 @@ import { AddClientComponent } from '../../add-client/add-client.component';
 import { EditClientComponent } from '../../edit-client/edit-client.component';
 import { ListClientComponent } from '../../list-client/list-client.component';
 import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
+import { ProductComponent } from '../../add-product/add-product.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 
@@ -27,7 +27,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'edit-client',   component: EditClientComponent },
     { path: 'list-client',     component: ListClientComponent },
     { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: IconsComponent },
+    { path: 'icons',          component: ProductComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
 ];

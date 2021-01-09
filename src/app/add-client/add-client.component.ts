@@ -49,6 +49,16 @@ export class AddClientComponent implements OnInit {
       }
       onSubmit(){
         if(!this.formClient.valid) {return;}
-        this.clientService.addClient(this.formClient.value);
+        this.clientService.addClient(this.formClient.value).subscribe(
+          (val) => {
+              console.log("POST call successful value returned in body", 
+                          val);
+          },
+          response => {
+              console.log("POST call in error", response);
+          },
+          () => {
+              console.log("The POST observable is now completed.");
+          });
       }
 }
