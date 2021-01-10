@@ -14,10 +14,35 @@ export class ListUserComponent implements OnInit {
       constructor(private userService: UsersService){  }
     
       ngOnInit() {
-        this.users = this.userService.getAllUsers();
-        this.usersToFilter = [...this.users];
+        this.userService.getAllUsers().subscribe(
+          (val) => {
+            this.users = val
+              console.log("POST call successful value returned in body", 
+                          val);
+          },
+          response => {
+              console.log("POST call in error", response);
+          },
+          () => {
+              console.log("The POST observable is now completed.");
+          });
       }
       supprimer(i){
-        this.users.userService.deleteUser(i) ;
+        this.userService.deleteUser(this.users[i]._id).subscribe(
+          (val) => {
+              console.log("POST call successful value returned in body", 
+                          val);
+          },
+          response => {
+              console.log("POST call in error", response);
+          },
+          () => {
+              console.log("The POST observable is now completed.");
+          });;
       }
-    }
+      // filters :
+ 
+  
+  
+  
+  }

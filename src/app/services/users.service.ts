@@ -27,11 +27,11 @@ export class UsersService {
   getUser(id) {
     return this.http.get(this.usersUrl + "users/user/" + id, this.options );
   }
-  updateUser(id) {
-    return this.http.get(this.usersUrl + "users/user/update" + id, this.options );
+  updateUser(id, data) {
+    return this.http.put(this.usersUrl + "users/user/update/"+ id, data, this.options );
   }
   deleteUser(id) {
-    return this.http.delete(this.usersUrl + "users/user/delete" + id, this.options );
+    return this.http.delete(this.usersUrl + "users/user/delete/" + id, this.options );
   }
   getAllUsers() {
     return this.http.get(this.usersUrl + "users/getAllusers", this.options );

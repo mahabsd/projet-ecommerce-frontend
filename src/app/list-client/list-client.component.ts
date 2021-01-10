@@ -8,16 +8,37 @@ import { ClientsService } from '../services/clients.service'
 })
 export class ListClientComponent implements OnInit {
 
-        recherche="";
-        clients;
-        clientsToFilter;
-        constructor(private clientService: ClientsService){  }
-      
-        ngOnInit() {
-          this.clients = this.clientService.getAllclients();
-          this.clientsToFilter = [...this.clients];
-        }
-        supprimer(id){
-          this.clients.clientService.deleteClient(id);
-}
+  recherche = "";
+  clients;
+  clientsToFilter;
+  constructor(private clientService: ClientsService) { }
+
+  ngOnInit() {
+    this.clientService.getAllclients().subscribe(
+      (val) => {
+        this.clients = val
+          console.log("POST call successful value returned in body", 
+                      val);
+      },
+      response => {
+          console.log("POST call in error", response);
+      },
+      () => {
+          console.log("The POST observable is now completed.");
+      });
+  }
+  supprimer(id) {
+    this.clientService.deleteClient(this.clients[id]._id).subscribe(
+      (val) => {
+        console.log("POST call successful value returned in body",
+          val);
+      },
+      response => {
+        console.log("POST call in error", response);
+      },
+      () => {
+        console.log("The POST observable is now completed.");
+      });
+      window.location.reload()
+  }
 }

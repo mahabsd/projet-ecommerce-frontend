@@ -16,19 +16,17 @@
                                     <th>Tel</th>
                                     <th>E-mail</th>
                                     <th>Adresse</th>
-                                    <th>Crée par</th>
                                     <th>Favoris</th>
-                                    <th>Modifier</th>
-                                    <th>Supprimer</th>
+                                    <th></th>
+                                    <th></th>
                                 </thead>
                                 <tbody>
-                                  <tr *ngFor="let client of clientsToFilter ;let i=index">
+                                  <tr *ngFor="let client of clients ;let i=index">
                                       <td>{{client.name}}</td>
                                       <td>{{client.type}}</td>
                                       <td>{{client.phone}}</td>
                                       <td>{{client.email}}</td>
                                       <td>{{client.address}}</td>
-                                      <td>{{client.userClient }}</td>
                                       <td>{{client.favourite}}</td>
                                       <td><button mat-raised-button  class="btn btn-success pull-right" type="button" [routerLink]="['/edit-client',i]">Edit</button></td>
                                       <td><button mat-raised-button class="btn btn-danger pull-right" type="button" (click)="supprimer(i)">Supprimer</button></td>

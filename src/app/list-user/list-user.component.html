@@ -11,20 +11,19 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
-                                    <th>Username</th>
-                                    <th>Prénom</th>
-                                    <th>Nom</th>
+                                    <th>firstName</th>
+                                    <th>lastName</th>
                                     <th>E-mail</th>
                                     <th>Adresse</th>
                                     <th></th>
                                     <th></th>
                                 </thead>
-                                <tbody>
-                                  <tr *ngFor="let user of usersToFilter ;let i=index">
+                                <tbody  ng-repeat="user in users | filter:recherche">
+                                  <tr *ngFor="let user of users ;let i=index">
                                       <td>{{user.firstName}}</td>
-                                      <td>{{user.laststName}}</td>
+                                      <td>{{user.lastName}}</td>
                                       <td>{{user.email}}</td>
-                                      <td>{{user.adress}}</td>
+                                      <td>{{user.adresse}}</td>
                                       <td><button mat-raised-button class="btn btn-success pull-right" type="button" [routerLink]="['/edit-user',i]">Edit</button></td>
                                       <td><button mat-raised-button class="btn btn-danger pull-right" type="button" (click)="supprimer(i)">Supprimer</button></td>
                                   </tr>

@@ -1,6 +1,7 @@
 
   import { Component, OnInit } from '@angular/core';
   import { FormControl, FormGroup, Validators, FormGroupDirective , NgForm} from '@angular/forms';
+import { Router } from '@angular/router';
   import { ClientsService } from '../services//clients.service';
 
   interface Type {
@@ -22,7 +23,6 @@ export class AddClientComponent implements OnInit {
       favourite:new FormControl(''),
       phone:new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required , Validators.email]),
-      password: new FormControl('',[Validators.pattern( /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#=$%&*])[\w!@#=$%^&*]{8,}$/ )])
     });
     types: Type[] = [
       { value: 'fourniture', viewValue: 'Fourniture' },
@@ -31,7 +31,7 @@ export class AddClientComponent implements OnInit {
     ]; 
       clients = [];
             
-      constructor(private clientService: ClientsService){
+      constructor(private clientService: ClientsService, private route: Router){
        }
         
       ngOnInit() {
@@ -60,5 +60,7 @@ export class AddClientComponent implements OnInit {
           () => {
               console.log("The POST observable is now completed.");
           });
+          this.route.navigateByUrl('/list-client');
+
       }
 }
