@@ -8,7 +8,7 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { ListUserComponent } from '../../list-user/list-user.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { ProductComponent } from '../../add-product/add-product.component';
-import { MapsComponent } from '../../maps/maps.component';
+import { AddCatComponent } from '../../add-cat/add-cat.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -36,7 +36,7 @@ import {MatSelectModule} from '@angular/material/select';
     ListUserComponent,
     TypographyComponent,
     ProductComponent,
-    MapsComponent,
+    AddCatComponent,
     NotificationsComponent,
   ]
 })

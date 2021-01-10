@@ -12,7 +12,7 @@ import { EditClientComponent } from '../../edit-client/edit-client.component';
 import { ListClientComponent } from '../../list-client/list-client.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { ProductComponent } from '../../add-product/add-product.component';
-import { MapsComponent } from '../../maps/maps.component';
+import { AddCatComponent } from '../../add-cat/add-cat.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 
 export const AdminLayoutRoutes: Routes = [ 
@@ -27,7 +27,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'edit-client',   component: EditClientComponent },
     { path: 'list-client',     component: ListClientComponent },
     { path: 'typography',     component: TypographyComponent },
-    { path: 'icons',          component: ProductComponent },
-    { path: 'maps',           component: MapsComponent },
+    { path: 'product',          component: ProductComponent },
+    { path: 'add-cat',           component: AddCatComponent },
     { path: 'notifications',  component: NotificationsComponent },
 ];

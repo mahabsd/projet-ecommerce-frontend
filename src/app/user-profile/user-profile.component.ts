@@ -13,6 +13,6 @@ export class UserProfileComponent implements OnInit {
   
     ngOnInit() {
       this.users = this.userService.getAllUsers();
-      this.user=JSON.parse(localStorage.getItem("connected_user"));
+      this.user=JSON.parse(localStorage.getItem("loggeduser"));
     }
   }

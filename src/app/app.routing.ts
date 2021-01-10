@@ -15,15 +15,19 @@ import { ListClientComponent } from '../app/list-client/list-client.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './services/auth.guard';
+import { AddCatComponent } from './add-cat/add-cat.component';
+import { ProductComponent } from './add-product/add-product.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' } ,
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   // { path: 'dashboard', component: DashboardComponent },
-  { path: '', component: AdminLayoutComponent,
-   children: [{ path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule' }] },
   {
-    path: 'user-profile', 
+    path: '', component: AdminLayoutComponent,
+    children: [{ path: '', loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule' }]
+  },
+  {
+    path: 'user-profile',
     component: UserProfileComponent,
     canActivate: [AuthGuard]
   },
@@ -34,12 +38,12 @@ const routes: Routes = [
   },
   {
     path: 'edit-user/:i',
-   component: EditUserComponent,
+    component: EditUserComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'list-user', 
-   component: ListUserComponent,
+    path: 'list-user',
+    component: ListUserComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -58,12 +62,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'add-client', 
+    path: 'add-client',
     component: AddClientComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'edit-client/:i', 
+    path: 'edit-client/:i',
     component: EditClientComponent,
     canActivate: [AuthGuard]
   },
@@ -74,8 +78,19 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-     component: DashboardComponent
+    component: DashboardComponent
   },
+  {
+    path: 'add-cat',
+    component: AddCatComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'produit',
+    component: ProductComponent,
+    canActivate: [AuthGuard]
+  },
+
 ];
 
 @NgModule({

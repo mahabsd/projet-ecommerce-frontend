@@ -16,8 +16,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/list-fournisseur', title: 'Liste de fournisseurs',  icon:'content_paste', class: '' },
     { path: '/add-client', title: 'Ajouter client',  icon:'content_paste', class: '' },
     { path: '/list-client', title: 'Liste de clients',  icon:'content_paste', class: '' },
-   { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    // { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
+   { path: '/add-cat', title: 'Catégorie',  icon:'bubble_chart', class: '' },
+   { path: '/produit', title: 'Produit',  icon:'content_paste', class: '' },
+
     // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
 ];
 
