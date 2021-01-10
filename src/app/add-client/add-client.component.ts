@@ -40,7 +40,6 @@ export class AddClientComponent implements OnInit {
         })
       }
 
-      hide = true;
       typeValue(value) {
         this.formClient.patchValue({
           type: value,

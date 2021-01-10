@@ -17,15 +17,20 @@ export class ListClientComponent implements OnInit {
     this.clientService.getAllclients().subscribe(
       (val) => {
         this.clients = val
-          console.log("POST call successful value returned in body", 
-                      val);
+        console.log("POST call successful value returned in body",
+          val);
       },
       response => {
-          console.log("POST call in error", response);
+        console.log("POST call in error", response);
       },
       () => {
-          console.log("The POST observable is now completed.");
+        console.log("The POST observable is now completed.");
       });
+  }
+  filter(input) {
+
+    this.clientsToFilter = this.clients
+    let result = this.clientsToFilter.filter(word => word.length > 6)
   }
   supprimer(id) {
     this.clientService.deleteClient(this.clients[id]._id).subscribe(
@@ -39,6 +44,6 @@ export class ListClientComponent implements OnInit {
       () => {
         console.log("The POST observable is now completed.");
       });
-      window.location.reload()
+    window.location.reload()
   }
 }
