@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductsService } from 'app/services/product.service';
 
 interface Type {
@@ -25,7 +26,7 @@ export class ProductComponent implements OnInit {
 
   products;
 
-  constructor(private productService: ProductsService) {
+  constructor(private productService: ProductsService,private route: Router) {
   }
   catsreceived = [];
 cats
@@ -67,5 +68,6 @@ cats
       () => {
         console.log("The POST observable is now completed.");
       });
+
   }
 }

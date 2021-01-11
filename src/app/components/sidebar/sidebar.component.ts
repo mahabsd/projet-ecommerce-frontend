@@ -30,11 +30,16 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
+  loggedUserRole;
   constructor( private router: Router) { }
 
   ngOnInit() {
-    this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.loggedUserRole = JSON.parse(localStorage.getItem("loggeduser")).role
+    if ((this.loggedUserRole === "manager" ) ||(this.loggedUserRole === "admin" )){
+      this.menuItems = ROUTES.filter(menuItem => menuItem);
+    } else {
+      this.menuItems = ROUTES.filter(menuItem => menuItem.path != '/add-user');
+    }
   }
   isMobileMenu() {
       if ($(window).width() > 991) {

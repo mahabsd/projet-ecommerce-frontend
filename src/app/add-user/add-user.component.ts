@@ -46,7 +46,9 @@ export class AddUserComponent implements OnInit {
     this.users = userService.getAllUsers();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+   }
   hide = true;
   matcher = new MyErrorStateMatcher();
 
@@ -78,6 +80,7 @@ export class AddUserComponent implements OnInit {
       () => {
           console.log("The POST observable is now completed.");
       });
+      this.route.navigateByUrl('/list-user');
 
   }
 
