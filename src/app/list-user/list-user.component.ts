@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @Component({
   selector: 'app-list-user',
@@ -8,7 +9,7 @@ import { UsersService } from '../services/users.service'
 })
 export class ListUserComponent implements OnInit {
  
-      recherche="";
+      recherche;
       users;
       usersToFilter;
       constructor(private userService: UsersService){  }
@@ -40,7 +41,6 @@ export class ListUserComponent implements OnInit {
               console.log("The POST observable is now completed.");
           });;
       }
-      // filters :
  
   
   

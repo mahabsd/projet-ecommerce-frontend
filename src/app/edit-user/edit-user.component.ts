@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { UsersService } from '../services/users.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-user',
@@ -21,7 +21,7 @@ export class EditUserComponent implements OnInit {
   );
   users;
   x: number;
-  constructor(private userService: UsersService, private route: ActivatedRoute) {
+  constructor(private userService: UsersService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -73,5 +73,6 @@ export class EditUserComponent implements OnInit {
       () => {
         console.log("The POST observable is now completed.");
       });
+      this.router.navigateByUrl('/list-user');
   }
 }

@@ -1,7 +1,7 @@
   import { Component, OnInit } from '@angular/core';
   import { FormControl, FormGroup, Validators, FormGroupDirective , NgForm} from '@angular/forms';
   import { FournisseursService } from '../services/fournisseurs.service';
-  import { ActivatedRoute } from '@angular/router';
+  import { ActivatedRoute, Router } from '@angular/router';
 
   interface Type {
     value: string;
@@ -25,29 +25,47 @@ export class EditFournisseurComponent implements OnInit {
          password: new FormControl('',[ Validators.pattern( /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#=$%&*])[\w!@#=$%^&*]{8,}$/ )]),
          }
         );
-         fournisseurs = [];
+         fournisseurs
          x:number;
          types: Type[] = [
           { value: 'fourniture', viewValue: 'Fourniture' },
           { value: 'food', viewValue: 'Food' },
           { value: 'sportswear', viewValue: 'Sports wear' },
         ]; 
-         constructor(private fournisseurService: FournisseursService, private route: ActivatedRoute){}
+         constructor(private fournisseurService: FournisseursService, private route: ActivatedRoute, private router: Router){}
       
           ngOnInit(){
-            this.fournisseurs=this.fournisseurService.getFournisseurs();
-            this.route.paramMap.subscribe(param => {
-            let i = +param.get('i');
-            this.formFournisseur.controls['name'].setValue(this.fournisseurs[i].name);
-            this.formFournisseur.controls['type'].setValue(this.fournisseurs[i].type);
-            this.formFournisseur.controls['address'].setValue(this.fournisseurs[i].address);
-            this.formFournisseur.controls['userFournisseur'].setValue(this.fournisseurs[i].userFournisseur);
-            this.formFournisseur.controls['favourite'].setValue(this.fournisseurs[i].favourite);
-            this.formFournisseur.controls['phone'].setValue(this.fournisseurs[i].phone);
-            this.formFournisseur.controls['email'].setValue(this.fournisseurs[i].email);
-            this.formFournisseur.controls['password'].setValue(this.fournisseurs[i].password);
-            this.x=i;
-             });
+            this.fournisseurService.getAllFournisseurs()
+            .subscribe(
+              (res) => {
+                this.fournisseurs = res;
+                console.log("POST call successful value returned in body",
+                  this.fournisseurs);
+                this.route.paramMap.subscribe(param => {
+                  let i = +param.get('i'); console.log(i);
+                  this.formFournisseur.patchValue({
+                    name: this.fournisseurs[i].name,
+                    email: this.fournisseurs[i].email,
+                    address: this.fournisseurs[i].address,
+                    type: this.fournisseurs[i].type,
+                    favourite: this.fournisseurs[i].favourite,
+                    phone: this.fournisseurs[i].phone
+                  });
+        
+                  this.x = i;
+                });
+        
+              },
+              response => {
+                console.log("POST call in error", response);
+              },
+              () => {
+                console.log("The POST observable is now completed.");
+              });
+            console.log(this.fournisseurs);
+            this.formFournisseur.patchValue({
+              userFournisseur: JSON.parse(localStorage.getItem("loggeduser"))._id,
+            })
         }
         
         hide = true;
@@ -71,6 +89,18 @@ export class EditFournisseurComponent implements OnInit {
 
         }
         edit(){
-        this.fournisseurs[this.x]=this.formFournisseur.value;
-        }
-  }
+          this.fournisseurService.updateFournisseur(this.fournisseurs[this.x]._id, this.formFournisseur.value).subscribe(
+            (val) => {
+              console.log("POST call successful value returned in body",
+                val);
+            },
+            response => {
+              console.log("POST call in error", response);
+            },
+            () => {
+              console.log("The POST observable is now completed.");
+            });
+            this.router.navigateByUrl('/list-fournisseur');
+          }
+
+  } 

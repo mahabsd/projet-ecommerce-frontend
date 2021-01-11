@@ -21,10 +21,12 @@ import { ListClientComponent } from './list-client/list-client.component';
 import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.component';
 import { MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
+    Ng2SearchPipeModule,
     CommonModule,
     MatCheckboxModule,
     MatSelectModule,
@@ -55,4 +57,4 @@ import { CommonModule } from '@angular/common';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {  }

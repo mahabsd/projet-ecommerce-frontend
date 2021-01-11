@@ -20,7 +20,7 @@ import { ProductComponent } from './add-product/add-product.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   // { path: 'dashboard', component: DashboardComponent },
   {
     path: '', component: AdminLayoutComponent,
@@ -77,7 +77,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'dashboard',
+    path: 'login',
     component: DashboardComponent
   },
   {

@@ -27,11 +27,7 @@ export class ListClientComponent implements OnInit {
         console.log("The POST observable is now completed.");
       });
   }
-  filter(input) {
-
-    this.clientsToFilter = this.clients
-    let result = this.clientsToFilter.filter(word => word.length > 6)
-  }
+  
   supprimer(id) {
     this.clientService.deleteClient(this.clients[id]._id).subscribe(
       (val) => {

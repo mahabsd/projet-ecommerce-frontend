@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ClientsService } from '../services/clients.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 interface Type {
@@ -33,7 +33,7 @@ export class EditClientComponent implements OnInit {
     { value: 'food', viewValue: 'Food' },
     { value: 'sportswear', viewValue: 'Sports wear' },
   ];
-  constructor(private clientService: ClientsService, private route: ActivatedRoute) { }
+  constructor(private clientService: ClientsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.clientService.getAllclients().subscribe(
@@ -101,6 +101,8 @@ export class EditClientComponent implements OnInit {
       () => {
         console.log("The POST observable is now completed.");
       });
+      this.router.navigateByUrl('/list-client');
+
   }
 
 }

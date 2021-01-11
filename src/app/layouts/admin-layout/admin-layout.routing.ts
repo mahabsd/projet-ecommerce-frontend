@@ -14,20 +14,21 @@ import { TypographyComponent } from '../../typography/typography.component';
 import { ProductComponent } from '../../add-product/add-product.component';
 import { AddCatComponent } from '../../add-cat/add-cat.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
+import { AuthGuard } from 'app/services/auth.guard';
 
 export const AdminLayoutRoutes: Routes = [ 
     // { path: 'dashboard',      component: DashboardComponent },
-    { path: 'add-user',   component: AddUserComponent },
-    { path: 'edit-user',   component: EditUserComponent },
-    { path: 'list-user',     component: ListUserComponent },
-    { path: 'add-fournisseur',   component: AddFournisseurComponent },
-    { path: 'edit-fournisseur',   component: EditFournisseurComponent },
-    { path: 'list-fournisseur',     component: ListFournisseurComponent },
-    { path: 'add-client',   component: AddClientComponent },
-    { path: 'edit-client',   component: EditClientComponent },
-    { path: 'list-client',     component: ListClientComponent },
-    { path: 'typography',     component: TypographyComponent },
-    { path: 'product',          component: ProductComponent },
-    { path: 'add-cat',           component: AddCatComponent },
-    { path: 'notifications',  component: NotificationsComponent },
+    { path: 'add-user',   component: AddUserComponent,  canActivate: [AuthGuard]  },
+    { path: 'edit-user',   component: EditUserComponent,  canActivate: [AuthGuard]  },
+    { path: 'list-user',     component: ListUserComponent, canActivate: [AuthGuard] },
+    { path: 'add-fournisseur',   component: AddFournisseurComponent,  canActivate: [AuthGuard]  },
+    { path: 'edit-fournisseur',   component: EditFournisseurComponent,  canActivate: [AuthGuard]  },
+    { path: 'list-fournisseur',     component: ListFournisseurComponent ,  canActivate: [AuthGuard] },
+    { path: 'add-client',   component: AddClientComponent,  canActivate: [AuthGuard]  },
+    { path: 'edit-client',   component: EditClientComponent,  canActivate: [AuthGuard] },
+    { path: 'list-client',     component: ListClientComponent,  canActivate: [AuthGuard] },
+    { path: 'Dashboard',      component: TypographyComponent,     canActivate: [AuthGuard]},
+    { path: 'product',          component: ProductComponent,  canActivate: [AuthGuard]  },
+    { path: 'add-cat',           component: AddCatComponent,  canActivate: [AuthGuard]  },
+    { path: 'notifications',  component: NotificationsComponent ,  canActivate: [AuthGuard] },
 ];

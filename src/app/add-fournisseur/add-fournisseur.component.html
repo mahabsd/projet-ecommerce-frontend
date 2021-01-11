@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-md-4">
                       <mat-form-field>
-                        <input  matInput placeholder="Enter your email" type="email" formControlName="email">
+                        <input  matInput placeholder="Entrer email l'email du fournisseur" type="email" formControlName="email">
                         <mat-error *ngIf="formFournisseur.hasError('required','email')">E-mail is required</mat-error>
                         <mat-error *ngIf="formFournisseur.hasError('email','email')">E-mail is not valid</mat-error>
                       </mat-form-field>

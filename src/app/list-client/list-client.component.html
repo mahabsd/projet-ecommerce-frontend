@@ -20,16 +20,26 @@
                                     <th></th>
                                     <th></th>
                                 </thead>
-                                <tbody>
-                                  <tr *ngFor="let client of clients ;let i=index">
+                                <tbody  ng-repeat="client in clients  ">
+                                  <tr *ngFor="let client of clients | filter:recherche;let i=index">
                                       <td>{{client.name}}</td>
                                       <td>{{client.type}}</td>
                                       <td>{{client.phone}}</td>
                                       <td>{{client.email}}</td>
                                       <td>{{client.address}}</td>
                                       <td>{{client.favourite}}</td>
-                                      <td><button mat-raised-button  class="btn btn-success pull-right" type="button" [routerLink]="['/edit-client',i]">Edit</button></td>
-                                      <td><button mat-raised-button class="btn btn-danger pull-right" type="button" (click)="supprimer(i)">Supprimer</button></td>
+
+                                      <td><button mat-raised-button  class="btn btn-success pull-right" type="button" [routerLink]="['/edit-client',i]">
+                                        <span class="material-icons">
+                                            border_color
+                                            </span>
+                                            Edit</button></td>
+                                      <td><button mat-raised-button class="btn btn-danger pull-right" type="button" (click)="supprimer(i)">
+                                        <span class="material-icons">
+                                            delete_outline
+                                            </span>
+                                        
+                                            Supprimer</button></td>
                                   </tr>
                                 </tbody>
                             </table>
