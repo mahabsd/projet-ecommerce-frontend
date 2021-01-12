@@ -41,6 +41,5 @@ export class NotificationsComponent implements OnInit {
       () => {
         console.log("The POST observable is now completed.");
       });
-    window.location.reload()
   }
 }

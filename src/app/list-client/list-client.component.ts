@@ -41,6 +41,5 @@ export class ListClientComponent implements OnInit {
       () => {
         console.log("The POST observable is now completed.");
       });
-    window.location.reload()
   }
 }
