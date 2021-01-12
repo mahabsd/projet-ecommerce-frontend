@@ -28,7 +28,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'edit-client',   component: EditClientComponent,  canActivate: [AuthGuard] },
     { path: 'list-client',     component: ListClientComponent,  canActivate: [AuthGuard] },
     { path: 'Dashboard',      component: TypographyComponent,     canActivate: [AuthGuard]},
-    { path: 'product',          component: ProductComponent,  canActivate: [AuthGuard]  },
+    { path: 'add-product',          component: ProductComponent,  canActivate: [AuthGuard]  },
     { path: 'add-cat',           component: AddCatComponent,  canActivate: [AuthGuard]  },
     { path: 'notifications',  component: NotificationsComponent ,  canActivate: [AuthGuard] },
 ];

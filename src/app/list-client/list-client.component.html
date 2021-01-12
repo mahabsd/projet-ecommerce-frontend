@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Liste de clients</h4>
-                        <input  matInput placeholder="recherche" [(ngModel)]="recherche.type">
+                        <input  matInput placeholder="recherche" [(ngModel)]="recherche">
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -17,6 +17,7 @@
                                     <th>E-mail</th>
                                     <th>Adresse</th>
                                     <th>Favoris</th>
+                                    <th>Ajouté par</th>
                                     <th></th>
                                     <th></th>
                                 </thead>
@@ -28,7 +29,7 @@
                                       <td>{{client.email}}</td>
                                       <td>{{client.address}}</td>
                                       <td>{{client.favourite}}</td>
-
+                                      <td>{{client.userClient.firstName}}</td>
                                       <td><button mat-raised-button  class="btn btn-success pull-right" type="button" [routerLink]="['/edit-client',i]">
                                         <span class="material-icons">
                                             border_color

@@ -11,6 +11,7 @@ export class ListClientComponent implements OnInit {
   recherche = "";
   clients;
   clientsToFilter;
+  userName
   constructor(private clientService: ClientsService) { }
 
   ngOnInit() {
