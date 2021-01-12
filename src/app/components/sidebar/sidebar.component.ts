@@ -10,16 +10,17 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     //  { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/Dashboard', title: 'Dashboard',  icon:'library_books', class: '' },
-    { path: '/add-user', title: 'Ajouter utilisateur',  icon:'person', class: '' },
+    // { path: '/Dashboard', title: 'Dashboard',  icon:'library_books', class: '' },
+    { path: '/add-user', title: 'Ajouter un utilisateur',  icon:'person', class: '' },
     { path: '/list-user', title: 'Liste utilisateurs',  icon:'people_outline', class: '' },
-    { path: '/add-fournisseur', title: 'Ajouter Fournisseur',  icon:'person_add_alt_1', class: '' },
+    { path: '/add-fournisseur', title: 'Ajouter un Fournisseur',  icon:'person_add_alt_1', class: '' },
     { path: '/list-fournisseur', title: 'Liste de fournisseurs',  icon:'list_alt', class: '' },
-    { path: '/add-client', title: 'Ajouter client',  icon:'person_add_alt_1', class: '' },
+    { path: '/add-client', title: 'Ajouter un client',  icon:'person_add_alt_1', class: '' },
     { path: '/list-client', title: 'Liste de clients',  icon:'list_alt', class: '' },
     { path: '/add-cat', title: 'Catégorie',  icon:'bubble_chart', class: '' },
     { path: '/add-produit', title: 'Ajouter un Produit',  icon:'addchart', class: '' },
-     { path: '/list-produit', title: 'liste de produits',  icon:'list_alt', class: '' },
+    { path: '/list-produit', title: 'liste de produits',  icon:'list_alt', class: '' },
+
 ];
 
 @Component({

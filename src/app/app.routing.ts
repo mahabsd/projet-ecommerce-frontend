@@ -19,6 +19,7 @@ import { AddCatComponent } from './add-cat/add-cat.component';
 import { ProductComponent } from './add-product/add-product.component';
 import { AuthDeactivateGuard } from './services/authDeactivated.guard';
 import { EditAdminComponent } from './edit-product/edit-admin.component';
+import { NotificationsComponent } from './list-product/notifications.component';
 
 
 const routes: Routes = [
@@ -95,6 +96,11 @@ const routes: Routes = [
   {
     path: 'edit-produit/:i',
     component: EditAdminComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'list-produit',
+    component: NotificationsComponent,
     canActivate: [AuthGuard]
   },
 ];
