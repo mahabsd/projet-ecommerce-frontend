@@ -8,13 +8,18 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
- 
+ manager =false
       recherche;
       users;
       usersToFilter;
+      loggeduser;
       constructor(private userService: UsersService){  }
     
       ngOnInit() {
+        this.loggeduser = JSON.parse(localStorage.getItem("loggeduser"));
+        if (this.loggeduser.role === "manager") {
+          this.manager = true;
+        } 
         this.userService.getAllUsers().subscribe(
           (val) => {
             this.users = val
