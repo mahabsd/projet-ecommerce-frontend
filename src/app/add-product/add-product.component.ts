@@ -55,7 +55,7 @@ cats
 
   onSubmit() {
     this.formProduct.patchValue({
-      userClient: JSON.parse(localStorage.getItem("loggeduser"))._id,
+      userID: JSON.parse(localStorage.getItem("loggeduser"))._id,
     })
     this.productService.addProduct(this.formProduct.value).subscribe(
       (val) => {

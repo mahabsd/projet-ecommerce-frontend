@@ -37,7 +37,7 @@ export class AddFournisseurComponent implements OnInit {
       
     ngOnInit() {
       this.formFournisseur.patchValue({
-        userFournisseur: JSON.parse(localStorage.getItem("loggeduser")),
+        userFournisseur: JSON.parse(localStorage.getItem("loggeduser"))._id,
       })
     }
     hide = true;

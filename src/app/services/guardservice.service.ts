@@ -31,6 +31,17 @@ export class GuardserviceService  {
     }
 
   }
+  public isNotAllowed(): boolean {
+    let loggeduser = JSON.parse(localStorage.getItem("loggeduser"));
+    console.log("logged role "+ loggeduser.role);
+    
+    if (loggeduser.role === 'manager') {
+      return false;
+    } else {
+      return true;
+    }
+
+  }
   
   isLoggedIn() : Observable<boolean> {
     return this.isLoginSubject.asObservable();

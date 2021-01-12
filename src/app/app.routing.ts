@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './services/auth.guard';
 import { AddCatComponent } from './add-cat/add-cat.component';
 import { ProductComponent } from './add-product/add-product.component';
+import { AuthDeactivateGuard } from './services/authDeactivated.guard';
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    canDeactivate: [AuthDeactivateGuard]
   },
   {
     path: 'edit-user/:i',

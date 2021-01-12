@@ -36,7 +36,7 @@ export class AddClientComponent implements OnInit {
         
       ngOnInit() {
         this.formClient.patchValue({
-          userClient: JSON.parse(localStorage.getItem("loggeduser")),
+          userClient: JSON.parse(localStorage.getItem("loggeduser"))._id,
         })
       }
 
