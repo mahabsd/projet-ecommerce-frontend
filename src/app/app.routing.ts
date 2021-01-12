@@ -36,8 +36,7 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent,
-    canActivate: [AuthGuard],
-    canDeactivate: [AuthDeactivateGuard]
+    canActivate: [AuthDeactivateGuard],
   },
   {
     path: 'edit-user/:i',

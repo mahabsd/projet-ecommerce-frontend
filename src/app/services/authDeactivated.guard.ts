@@ -8,7 +8,7 @@ import { GuardserviceService } from './guardservice.service';
 export class AuthDeactivateGuard {
   constructor(public auth: GuardserviceService, public router: Router) { }
 
-  CanDeactivate(): boolean {
+  canActivate(): boolean {
     if (!this.auth.isNotAllowed()) {
       this.router.navigate(['localhost:4200/Dashboard']);
       return false;

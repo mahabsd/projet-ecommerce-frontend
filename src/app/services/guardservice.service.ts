@@ -33,9 +33,10 @@ export class GuardserviceService  {
   }
   public isNotAllowed(): boolean {
     let loggeduser = JSON.parse(localStorage.getItem("loggeduser"));
+    const token = localStorage.getItem('token');
     console.log("logged role "+ loggeduser.role);
-    
-    if (loggeduser.role === 'manager') {
+
+    if ((loggeduser.role === 'employee')||(token === null) ) {
       return false;
     } else {
       return true;

@@ -15,10 +15,11 @@ import { ProductComponent } from '../../add-product/add-product.component';
 import { AddCatComponent } from '../../add-cat/add-cat.component';
 import { NotificationsComponent } from '../../list-product/notifications.component';
 import { AuthGuard } from 'app/services/auth.guard';
+import { AuthDeactivateGuard } from 'app/services/authDeactivated.guard';
 
 export const AdminLayoutRoutes: Routes = [ 
     // { path: 'dashboard',      component: DashboardComponent },
-    { path: 'add-user',   component: AddUserComponent,  canActivate: [AuthGuard]  },
+    { path: 'add-user',   component: AddUserComponent,  canActivate: [AuthDeactivateGuard]  },
     { path: 'edit-user',   component: EditUserComponent,  canActivate: [AuthGuard]  },
     { path: 'list-user',     component: ListUserComponent, canActivate: [AuthGuard] },
     { path: 'add-fournisseur',   component: AddFournisseurComponent,  canActivate: [AuthGuard]  },
