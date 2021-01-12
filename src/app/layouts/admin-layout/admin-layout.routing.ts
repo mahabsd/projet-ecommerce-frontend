@@ -13,7 +13,7 @@ import { ListClientComponent } from '../../list-client/list-client.component';
 import { TypographyComponent } from '../../typography/typography.component';
 import { ProductComponent } from '../../add-product/add-product.component';
 import { AddCatComponent } from '../../add-cat/add-cat.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
+import { NotificationsComponent } from '../../list-product/notifications.component';
 import { AuthGuard } from 'app/services/auth.guard';
 
 export const AdminLayoutRoutes: Routes = [ 
@@ -30,5 +30,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Dashboard',      component: TypographyComponent,     canActivate: [AuthGuard]},
     { path: 'add-product',          component: ProductComponent,  canActivate: [AuthGuard]  },
     { path: 'add-cat',           component: AddCatComponent,  canActivate: [AuthGuard]  },
-    { path: 'notifications',  component: NotificationsComponent ,  canActivate: [AuthGuard] },
+    { path: 'list-produit',  component: NotificationsComponent ,  canActivate: [AuthGuard] },
 ];

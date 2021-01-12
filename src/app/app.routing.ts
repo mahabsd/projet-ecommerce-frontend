@@ -18,6 +18,7 @@ import { AuthGuard } from './services/auth.guard';
 import { AddCatComponent } from './add-cat/add-cat.component';
 import { ProductComponent } from './add-product/add-product.component';
 import { AuthDeactivateGuard } from './services/authDeactivated.guard';
+import { EditAdminComponent } from './edit-product/edit-admin.component';
 
 
 const routes: Routes = [
@@ -92,7 +93,11 @@ const routes: Routes = [
     component: ProductComponent,
     canActivate: [AuthGuard]
   },
-
+  {
+    path: 'edit-produit/:i',
+    component: EditAdminComponent,
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

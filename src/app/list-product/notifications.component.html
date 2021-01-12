@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Liste de clients</h4>
+                        <h4 class="card-title ">Liste de produits</h4>
                         <input  matInput placeholder="recherche" [(ngModel)]="recherche">
                     </div>
                     <div class="card-body">
@@ -12,23 +12,21 @@
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>Nom </th>
-                                    <th>Type</th>
-                                    <th>Tel</th>
-                                    <th>E-mail</th>
-                                    <th>Adresse</th>
-                                    <th>Favoris</th>
+                                    <th>price</th>
+                                    <th>quantity</th>
+                                    <th>description</th>
+                                    <th>Category</th>
                                     <th></th>
                                     <th></th>
                                 </thead>
-                                <tbody  ng-repeat="client in clients  ">
-                                  <tr *ngFor="let client of clients | filter:recherche;let i=index">
-                                      <td>{{client.name}}</td>
-                                      <td>{{client.type}}</td>
-                                      <td>{{client.phone}}</td>
-                                      <td>{{client.email}}</td>
-                                      <td>{{client.address}}</td>
-                                      <td>{{client.favourite}}</td>
-                                      <td><button mat-raised-button  class="btn btn-success pull-right" type="button" [routerLink]="['/edit-client',i]">
+                                <tbody  ng-repeat="produit in produits  ">
+                                  <tr *ngFor="let produit of produits | filter:recherche;let i=index">
+                                      <td>{{produit.name}}</td>
+                                      <td>{{produit.price}}</td>
+                                      <td>{{produit.quantity}}</td>
+                                      <td>{{produit.description}}</td>
+                                      <td>{{produit.category}}</td>
+                                      <td><button mat-raised-button  class="btn btn-success pull-right" type="button" [routerLink]="['/edit-produit',i]">
                                         <span class="material-icons">
                                             border_color
                                             </span>

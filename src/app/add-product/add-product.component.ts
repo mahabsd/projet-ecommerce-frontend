@@ -3,10 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductsService } from 'app/services/product.service';
 
-interface Type {
-  value: string;
-  viewValue: string;
-}
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',

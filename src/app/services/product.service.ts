@@ -28,13 +28,13 @@ export class ProductsService {
   getProduct(id) {
     return this.http.get(this.clientsUrl + "products/product/" + id, this.options);
   }
-  updateProduct(id) {
-    return this.http.get(this.clientsUrl + "products/product/update" + id, this.options);
+  updateProduct(id, data) {
+    return this.http.put(this.clientsUrl + "products/product/update/" + id, data, this.options);
   }
   deleteProduct(id) {
-    return this.http.delete(this.clientsUrl + "products/product/delete" + id, this.options);
+    return this.http.delete(this.clientsUrl + "products/product/delete/" + id, this.options);
   }
-  getAllclients() {
+  getAllProducts() {
     return this.http.get(this.clientsUrl + "products/getAllproduct", this.options);
   }
 
@@ -48,11 +48,11 @@ addcat(data) {
 getCat(id) {
   return this.http.get(this.clientsUrl + "cats/category/" + id, this.options);
 }
-updateCat(id) {
-  return this.http.get(this.clientsUrl + "cats/category/update" + id, this.options);
+updateCat(id, data) {
+  return this.http.put(this.clientsUrl + "cats/category/update/" + id, data, this.options);
 }
 deleteCat(id) {
-  return this.http.delete(this.clientsUrl + "cats/category/delete" + id, this.options);
+  return this.http.delete(this.clientsUrl + "cats/category/delete/" + id, this.options);
 }
 getAllcats() {
   return this.http.get(this.clientsUrl + "cats/getAllcategory", this.options);

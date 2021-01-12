@@ -16,7 +16,7 @@ import { AddClientComponent } from './add-client/add-client.component';
 import { AddFournisseurComponent } from './add-fournisseur/add-fournisseur.component';
 import { EditClientComponent } from './edit-client/edit-client.component';
 import { EditFournisseurComponent } from './edit-fournisseur/edit-fournisseur.component';
-import { EditAdminComponent } from './edit-admin/edit-admin.component';
+import { EditAdminComponent } from './edit-product/edit-admin.component';
 import { ListClientComponent } from './list-client/list-client.component';
 import { ListFournisseurComponent } from './list-fournisseur/list-fournisseur.component';
 import { MatSelectModule } from '@angular/material/select';
